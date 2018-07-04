@@ -1,0 +1,108 @@
+.services{
+	@extend %boxFull;
+	position: relative;
+	background: $blue5;
+	padding: 30px 0;
+	
+
+	@include respond-to(sm){
+		padding: 60px 0;
+	}
+
+	@include e('conteudo'){
+		@extend %boxFull;
+		margin: 30px 0 0;
+	}
+	@include e('list'){
+		@include span(1);
+		margin: 0;
+	}
+	@include e('list-itens'){
+		@include span(1);
+		display: flex;
+    	align-items: center;
+    	flex-direction: column;
+    	//	margin-bottom: 30px;
+    	text-align: center;
+    	min-height: 370px;
+    	&:last-child{
+    	 	min-height: 300px;
+    	}
+    	@include respond-to(sm){
+			@include span(.50);
+			align-items: center;
+			flex-direction: column;	
+			min-height: 370px;
+			&:last-child{
+    	 		min-height: 370px;
+    		}
+			
+		}
+
+		@include respond-to(md){
+			min-height: inherit;
+			flex-direction: inherit;
+			align-items: flex-start;
+			min-height: 265px;
+			&:nth-child(5),&:last-child{
+    	 		min-height: 200px;
+    	}	
+		}
+
+	}
+	@include e('list-icon'){
+		@include span(1);
+		
+		@include respond-to(sm){
+			@include span(.15);
+		}
+
+		i{
+			color: #ff8d00;
+    		font-size: 60px;
+		}
+	}
+	@include e('list-legend'){
+		@include span(1);	
+		
+
+		@include respond-to(sm){
+			@include span(1);
+			text-align: center;
+			padding: 0 22px;	
+
+		}
+		@include respond-to(md){	
+			text-align: left;
+			padding: 0 10px;
+			@include span(.75);
+		}
+		
+		h4{
+			@include fonts(500,24);
+			margin: 15px 0;
+			text-transform: uppercase;
+			color: #fff;
+
+
+	    	@include respond-to(sm){
+	    		@include fonts(500,20);
+	    		margin: 20px 0;
+	    	}
+	    	@include respond-to(md){
+	    		@include fonts(500,23);
+	    		margin: 0 0 20px;
+	    	}
+		}
+		p{
+			@include fonts(300,16);
+			color: #fff;
+			margin: 0;
+
+			@include respond-to(sm){
+	    		
+	    		margin: 0;
+	    	}
+		}
+	}
+}

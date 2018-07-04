@@ -1,0 +1,453 @@
+// ==========================================================================
+// MIXINGS
+// Definião de todos os @mixings do projeto
+// Não remover para não causar crash no SASS
+// ==========================================================================
+
+// -----------------------------------------------------------
+// JEET
+// An alias for the column mixin.
+// @param [$args...] - All arguments get passed through to column().
+// -----------------------------------------------------------
+
+@mixin col($args...) {
+  @include column($args...);
+}
+
+// -----------------------------------------------------------
+// BEM - https://en.bem.info/method/
+// Estruturação do CSS em BEM
+// -----------------------------------------------------------
+
+@mixin element($element, $parent: false) {
+    @if $parent != false {
+      #{$parent}__#{$element} {
+        @content;
+      }
+    } @else {
+      &__#{$element} {
+        @content;
+      }
+    }
+}
+
+@mixin modifier($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}
+
+@mixin e($element, $parent: false) {
+    @include element($element, $parent)  {
+        @content;
+    }
+}
+
+@mixin m($modifier) {
+    @include modifier($modifier) {
+        @content;
+    }
+}
+
+// -----------------------------------------------------------
+// RESPONSIVO
+// Regras das Media QUeries para responsivo
+// -----------------------------------------------------------
+
+$break-mobile: 568px;
+$break-small: 767px;
+$break-medium: 1023px;
+$break-large: 1400px;
+
+@mixin respond-to($media) {
+
+  @if $media == xs {
+    @media only screen and (min-width: $break-mobile) { @content; }
+  }
+
+  @else if $media == sm {
+    @media only screen and (min-width: $break-small) { @content; }
+  }
+
+  @else if $media == md {
+    @media only screen and (min-width: $break-medium) { @content; }
+  }
+
+  @else if $media == lg{
+    @media only screen and ( min-width: $break-large){ @content; }
+  }
+}
+
+//Exibir Itens por Resolução
+@mixin view($args...) {
+
+  display: none;
+  @include showdiv($args);
+
+}
+
+@mixin showdiv($args) {
+  @each $view in $args {
+
+      @if $view == xs {
+          @media only screen and (max-width: $break-small) { display: block; }
+      }
+
+      @if $view == sm {
+          @media only screen and (min-width: $break-small + 1) and (max-width: $break-medium) { display: block; }
+      }
+
+      @if $view == md {
+          @media only screen and (min-width: $break-medium) and (max-width: $break-large) { display: block; }
+      }
+
+      @if $view == lg{
+          @media only screen and ( min-width: $break-large + 1) { display: block; }
+      }
+  }
+}
+
+// -----------------------------------------------------------
+// Mix's Padrão
+// Conjunto de Mixings padrão do projeto
+// -----------------------------------------------------------
+
+//FontAwesome
+@mixin icone($icone){
+  @extend .fa;
+  content: $icone;
+}
+
+//Borderline
+@mixin borderline($cor:$cor-primaria, $w:80%, $h:2px, $t:0, $l:0, $center:false){
+    position: relative;
+    &:before {
+        content: "";
+        position: absolute;
+        background: $cor;
+        height: $h;
+        width: $w;
+        left: $l;
+        top: $t;
+
+        @if $center == true {
+          transform: translateX(-50%);
+        }
+    }
+}
+
+// Width & Height
+@mixin size($w,$h:$w) { width: $w; height: $h;}
+
+// Fonts
+@mixin fonts( $bold: 400, $size: 12, $font: $font-default) {
+  font: $bold rem($size) $font;
+}
+@mixin Display_flex( $display-flex: flex, $alcenter: center, $center: center){
+  display: $display-flex;
+  align-items: $alcenter;
+  justify-content: $center;
+}
+// Prefixos
+@mixin prefix($property, $value, $prefixes:(webkit ms moz o)) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  } // Output standard non-prefixed declaration
+
+  #{$property}: $value;
+}
+
+
+//==========================================================================
+// FUNCTIONS
+//==========================================================================
+
+//REM
+@function rem($pxsize) { @return ($pxsize/16)+rem; }
+
+//Titulos
+@mixin titles($weight:800, $size:40, $color:$cor-titulos){
+    @include fonts($weight, $size);
+    color: $color;
+    margin: 0;
+
+    a {
+      color: inherit;
+
+      &:hover {
+        color: darken($color, 10%);
+      }
+    }
+}
+//MIXIN DOS TITULOS DAS SECTIONS
+
+//mixin para before branco acima do titulo.
+// @mixin beforeWhite( $Width: 100%, $brColorWhite: $white){
+
+//  &:before {
+//     border-width: 5px 5px 0;
+//     border-style: solid;
+//     border-color: $white;
+//     content: "";
+//     display: block;
+//     position: absolute;
+//     top: -35px;
+//     width: $Width;
+//     height: 35px;
+   
+
+//    }
+// }
+
+//mixin para after azul em baixo do titulo.
+// @mixin afterBlue( $Width: 100%, $brColorBlue: $blue2){
+
+//   &:after {
+//      border-color: $blue2;
+//      border-style: solid;
+//      border-width: 0 5px 5px;
+//      height: 55px;
+//      width: 100%;
+//      display: block;
+//      top: 0;
+//      content: "";
+//      position: absolute;
+    
+//   }
+
+// }
+
+//mixin para before azul em cima do titulo.
+// @mixin beforeBlue( $Width: 100%, $brColorBlue: $blue2){
+
+//   &:before {
+//      border-width: 5px 5px 0;
+//      border-style: solid;
+//      border-color: $blue2;
+//      content: "";
+//      display: block;
+//      position: absolute;
+//      top: -35px;
+//      width: 100%;
+//      height: 35px;
+  
+
+//     }
+//  }
+
+//mixin para after branco em baixo do titulo.
+// @mixin afterWhite( $Width: 100%, $brColorWhite: $white){
+
+//   &:after {
+//      border-color: $white;
+//      border-style: solid;
+//      border-width: 0 5px 5px;
+//      height: 55px;
+//      width: 100%;
+//      display: block;
+//      top: 0;
+//      content: "";
+//      position: absolute;
+    
+//   }
+
+// }
+
+//mixin para before branco direito do titulo.
+// @mixin beforeWhiteRight( $Width: 100%, $brColorWhite: $white){
+
+//  &:before {
+//     border-width: 0 5px 0 0;
+//     border-style: solid;
+//     border-color: $white;
+//     content: "";
+//     display: block;
+//     position: absolute;
+//     top: -25px;
+//     width: $Width;
+//     height: 25px;
+   
+
+//    }
+// }
+//mixin para before branco direito do titulo.
+// @mixin beforeWhiteRightAtendimento( $Width: 100%, $brColorWhite: $white){
+
+//  &:before {
+//     border-width: 0 5px 0 0;
+//     border-style: solid;
+//     border-color: $white;
+//     content: "";
+//     display: block;
+//     position: absolute;
+//     top: -25px;
+//     width: $Width;
+//     height: 25px;
+   
+
+//    }
+// }
+//mixin para before branco direito do titulo.
+// @mixin beforeGrayRight( $Width: 100%, $brColorGray: $gray1){
+
+//  &:before {
+//     border-width: 0 0 0 5px;
+//     border-style: solid;
+//     border-color: $gray1;
+//     content: "";
+//     display: block;
+//     position: absolute;
+//     top: -25px;
+//     width: $Width;
+//     height: 25px;
+   
+
+//    }
+// }
+//mixin para after azul direito do titulo.
+// @mixin afterWhiteRight( $Width: 100%, $brColorWhite: $white){
+
+//   &:after {
+//      border-color: $white;
+//      border-style: solid;
+//      border-width: 0 0 0 5px;
+//      height: 245px;
+//      width: 100%;
+//      display: block;
+//      top: 0;
+//      content: "";
+//      position: absolute;
+    
+//   }
+
+// }
+
+//mixin para after azul direito do titulo.
+// @mixin afterBlueRight( $Width: 100%, $brColorBlue: $blue2){
+
+//   &:after {
+//      border-color: $blue2;
+//      border-style: solid;
+//      border-width: 0 5px 0 0;
+//      height: 245px;
+//      width: 100%;
+//      display: block;
+//      top: 0;
+//      content: "";
+//      position: absolute;
+    
+//   }
+
+// }
+//mixin para after azul direito do titulo.
+// @mixin afterBlueRightAtendimento( $Width: 100%, $brColorBlue:  #007cdb){
+
+//   &:after {
+//      border-color:  #007cdb;
+//      border-style: solid;
+//      border-width: 0 5px 0 0;
+//      height: 245px;
+//      width: 100%;
+//      display: block;
+//      top: 0;
+//      content: "";
+//      position: absolute;
+    
+//   }
+
+// }
+/////////////////////////////////////////////////////////////////////
+
+
+//mixin para before de titulos 4.
+// @mixin beforesfourleft( $Width: 232px, $brColor: $blue2){
+//   &:before {
+//     border-width: 2px 0 2px 2px;
+//     border-style: solid;
+//     border-color: $blue2!important;
+//     content: "";
+//     display: block;
+//     left: -54px!important;
+//     margin-right: auto;
+//     margin-left: auto;
+//     //padding: 58px 0!important;
+//     position: absolute;
+//     top: -2px!important;
+//     width: 54px;
+//     height: 142px$i;
+
+//    }
+
+// }
+
+//mixin para before de titulos 4.
+// @mixin beforesfourright( $Width: 232px, $brColor: $blue2){
+//   &:before {
+//     border-width: 2px 2px 2px 0;
+//     content: "";
+//     right: -54px!important;
+//     left: inherit$i;
+//     height: 142px$i;
+
+//    }
+
+//}
+
+//Border Radius
+@mixin radius($borda...) {
+   @include prefix(border-radius, $borda);
+}
+
+// Mask Topo
+@mixin mask( $opacidade:.7, $bg:.4, $cor:$black) {
+  &:before{
+    @include size(100%);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: {
+      color: rgba($cor-topo, $bg);
+      image: linear-gradient(top, rgba($cor, $opacidade) 10%, transparent 30%);
+      image: -webkit-linear-gradient(top, rgba($cor, $opacidade) 10%, transparent 30%);
+      image: -moz-linear-gradient(top, rgba($cor, $opacidade) 10%, transparent 30%);
+    }
+  }
+}
+
+// Transição BG
+@mixin transition($t) {
+  @include prefix(transition, background $t ease-in-out);
+}
+
+// Placeholder
+@mixin placeholder-text {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+// Image Replace
+@mixin imgRep(){
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+
+//Btn Modificador
+@mixin btnmod($modificador, $cor, $cor-hover:$cor) {
+    @include m($modificador){
+        background-color: $cor;
+
+      &:hover{
+          background-color: darken($cor-hover, 30%);
+      }
+    }
+}

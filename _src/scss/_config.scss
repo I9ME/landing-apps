@@ -1,0 +1,71 @@
+//==============================
+// JEET
+// Importação dos arquivos do Grid
+// http://jeet.gs
+//==============================
+
+@import '../../node_modules/jeet/scss/index';
+
+//==============================
+// LIBS
+// Importação dos arquivos do Grid, Normalize e Reset
+//==============================
+
+//Reset - https://necolas.github.io/normalize.css/
+@import 'libs/normalize/normalize';
+
+//Font awesome - https://fortawesome.github.io/Font-Awesome/
+@import 'libs/font-awesome/font-awesome';
+
+//Animate CSS - https://daneden.github.io/animate.css/
+@import 'libs/animate/animations';
+//==============================
+// CORE
+//==============================
+
+//VARIÁVEIS
+//Define as variáveis do projeto
+@import 'core/variaveis';
+
+//MIXINGS
+//Conjunto de Mixxings SASS
+@import 'core/mix';
+
+//PLACEHOLDERS
+//Conjunto de Placeholders
+@import 'core/placeholder';
+
+//Invoca Fonts
+//Definição das fonts de texto do projeto
+//Usar somente quando utilizar embed fonts
+@import 'core/fonts';
+
+//Reset Personalizado
+//Criação de um Reset personalizado para o projeto
+@import 'core/reset';
+
+//==============================
+// MODULOS
+//==============================
+@import 'modulos/index';
+
+//==============================
+// VENDOR
+//==============================
+@import 'vendor/index';
+
+//==============================
+// SECTIONS
+//==============================
+@import 'sections/header';
+@import 'sections/banner';
+@import 'sections/quem-somos';
+@import 'sections/create-apps';
+@import 'sections/header-section';
+@import 'sections/list-apps';
+@import 'sections/services';
+@import 'sections/portfolio';
+@import 'sections/contact';
+//@import 'sections/sistema';
+//@import 'sections/sobre-contabilizar';
+@import 'sections/footer';

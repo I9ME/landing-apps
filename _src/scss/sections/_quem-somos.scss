@@ -1,0 +1,116 @@
+.quem-somos{
+    @extend %boxFull;
+    background: #2c7d95; 
+    padding: 30px 0;
+    position: relative;
+
+    
+    @include respond-to(sm){
+        padding: 60px 0;
+    }
+    @include e('sobre'){
+        @extend %boxFull;        
+    }
+
+    @include e('lista'){
+        margin: 30px 0 60px;
+
+    }
+
+    @include e('lista-item'){
+        @include fonts(100,16);
+        width: 100%;
+        align-items: center;
+        justify-content: baseline;
+        display: flex;
+        margin-bottom: 30px;
+        color: $white;
+        
+        @include respond-to(sm){
+            @include fonts(100,16);
+            margin-left: 0;
+        }
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+            span{
+                margin-left: 8px;
+            }
+
+            i {
+                font-size: 12px$i;
+                color: #2c7d95; 
+                margin-right: 1%;
+            }
+            .icon{
+                width: 20px$i;
+                height: 20px$i;
+            }
+           
+    }
+
+    @include e('carousel'){
+        @extend %boxFull; 
+       
+        li{
+            @include fonts(100,16);
+            color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            max-width: 810px;
+            margin: 0;
+            
+            @include respond-to(sm){
+                @include fonts(100,22);
+                margin: 0 20%; 
+            }
+
+            img{
+                width: 100px$i;
+                height: 100px$i;
+                border-radius: 63px;
+            }
+
+            h4{
+                margin: 10px 0;
+            }
+            h5{
+                @include fonts(100,22);
+                margin: 0;
+            }
+            p{
+                margin: 30px 0;
+                text-align: center;
+            }
+        }
+        
+    }
+
+}
+
+#quem-somos{
+    .owl-controls .owl-nav .owl-next, .owl-controls .owl-nav .owl-prev{
+        background: #fff;
+    }
+    .owl-next:before, .owl-prev:before{
+        color: #2c7d95;
+        font-size: 40px;
+        height: 40px;
+        left: 46%;
+    }
+    .owl-dots{
+        bottom: -28px;
+        position: relative;
+       
+        @include respond-to(sm){
+            bottom: 0;
+            position: relative;
+        }
+    }
+    .owl-dots .owl-dot{
+        border: 0;
+    }
+}

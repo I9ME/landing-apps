@@ -1,0 +1,50 @@
+.owl-carousel {
+
+    .owl-controls {
+        @extend %boxFull;
+    }
+
+    .owl-nav {
+        display: block;
+    }
+
+    .owl-prev,
+    .owl-next {
+      @include size(50px);
+      border-radius: 50%;
+      position: absolute;
+      display: block;
+      z-index: 999;
+      top: 50%;
+      left: -3%;
+      transform: translateY(-50%);
+      transition: all .2s ease-in-out;
+
+      @include respond-to(lg){
+        left: -9%;
+      }
+
+      &:before {
+        @extend .fa;
+        @extend .fa-angle-left;
+        @extend %centerPositionAll;
+        color: $cor-primaria;
+        font-size: rem(38);
+        z-index: 99;
+      }
+
+      &:hover,
+      &:focus {
+        // background-color: rgba($cor-primaria, .9);
+      }
+    }
+
+    .owl-next{
+      left: auto;
+      right: -3%;
+      transform: translateY(-50%) rotate(180deg);
+      @include respond-to(lg){
+        right: -9%;
+      }
+    }
+}

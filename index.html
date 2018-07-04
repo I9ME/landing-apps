@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+	<meta charset="UTF-8">
+	<title>I9ME | Empresa especialista em desenvolvimento de aplicativos para iOS, iPhone, iPad e Android</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="A Devari desenvolve sistemas e aplica tecnologia de inteligência artificial, com intuito de auxiliar as empresas a transformarem dados em informação para tomada de decisão e, assim, melhorarem a performance de seus negócios.">
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="keywords" content="app, aplicativo, desenvolvimento, tecnologia, ios, android, inteligência">
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Desenvolvemos seu aplicativo iOS e Android com Responsabilidade e Excelência - Conheça a Devari" />
+    <meta property="og:url" content="https://aplicativos.devari.com.br" />
+    <meta property="og:site_name" content="Aplicativos - Devari Tecnologia" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Aplicativos - Devari Tecnologia" />
+    <meta property="og:image" content="http://aplicativos.devari.com.br/assets/images/og-devari-2.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <link rel="stylesheet" href="assets/css/main.min.css">
+    <link rel="icon" href="favicon.png" />
+   
+    <script type="text/javascript" language="javascript">
+        function validaForm(){
+            
+                //validar nome
+                if (document.formulario_registro.nome.value == ""){
+                    alert("O campo NOME não pode ficar em branco!");
+                    document.formEnvioMail.nome.focus();
+                    return false;
+                }
+                //validar email
+                if (document.formulario_registro.email.value == ""){
+                    alert("O campo EMAIL não pode ficar em branco! Tente novamente");
+                    document.formEnvioMail.email.focus();
+                    return false;
+                }
+                //validar fone
+                if (document.formulario_registro.fone.value == ""){
+                    alert("O campo TELEFONE não pode ficar em branco! Tente novamente");
+                    document.formEnvioMail.fone.focus();
+                    return false;
+                }
+                document.formEnvioMail.submit();
+                
+                return true;        
+            }
+    </script>
+
+    </script>
+    <!-- Facebook Pixel Code -->
+    <script>
+       !function(f,b,e,v,n,t,s)
+       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+       n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+       if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+       n.queue=[];t=b.createElement(e);t.async=!0;
+       t.src=v;s=b.getElementsByTagName(e)[0];
+       s.parentNode.insertBefore(t,s)}(window, document,'script',
+       'https://connect.facebook.net/en_US/fbevents.js');
+       fbq('init', '152392682179686');
+       fbq('track', 'PageView');
+     </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=152392682179686&ev=PageView&noscript=1"/></noscript>
+     <!-- End Facebook Pixel Code -->
+     <div id="fb-root"></div>
+     <script>(function(d, s, id) {
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) return;
+       js = d.createElement(s); js.id = id;
+       js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.11';
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+    </script>
+</head>
+<body>
+    <main>
+        <header class="header" id="header">
+            <div class="container">
+                <nav class="header__nav">
+                     <a href="#inicio" title="Início" class="header__brand">
+                        <h1 class="header__logo">
+                            <span class="header__letter header--i">I</span>
+                            <span class="header__letter header--n">9</span>
+                            <span class="header__letter header--m">M</span>
+                            <span class="header__letter header--e">E</span>
+                        </h1>
+                        <div class="header__name">
+                          <span class="">Web &amp; Design</span>
+                        </div>        
+                    </a>
+                    <a href="#menu" class="header__toggle"><span></span></a>
+                    <div class="header__menu">
+                        <ul class="menu ">
+                            <li class="menu__item">
+                                <a href="#inicio" title="Inicio">Home</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#q-somos" title="Quem Somos">Quem Somos</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#portfolio" title="Portfolio">Portfólio</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#servicos" title="Serviços">Serviços</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="#recursos" title="Recursos">Recursos</a>
+                            </li>  
+                            <li class="menu__item">
+                                <a href="#contato" title="Contato">Contato</a>
+                            </li>  
+                        </ul>   
+                    </div>
+                    <div class="redes">
+                        <a href="https://api.whatsapp.com/send?phone=558598624149" target="_blank" title="Whatsapp"><i class="icon fa fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/i9mewebdesign/" target="_blank" title="Facebook"> <i class="icon fa fa-facebook"></i></a>
+                    </div>
+                   
+                </nav>
+            </div>
+        </header>
+        
+      <section class="banner" id="inicio">
+                
+                <ul class="banner__carousel" id="carousel-banner">
+                    <li class="banner__carousel-item">
+                        <figure class="banner__carousel-figure">
+                            <img src="assets/images/slide01.png">
+                        </figure>
+                        <div class="banner__carousel-legend">
+                    
+                          <h3 class="banner__carousel-title wow fadeInUp">Criação de Aplicativos<br>para iOS e Android</h3>
+                      
+                            <p class="banner__carousel-subtitle wow fadeInUp">
+                           Aumento o lucro e reduza os custos da sua empresa otimizando os processos.</p> <br/><br/>
+                            
+                            <div class="banner__carousel-btns wow zoomIn">
+                                <span>
+                                    <a href="#contato" title="Conheça os planos" alt="Conheça os planos" class="btn-default">Faça um orçamento gratuito</a>
+                                </span>
+                                <span>
+                                    <a href="https://api.whatsapp.com/send?phone=558598624149" title="Conheça os planos" alt="Conheça os planos" class="btn-default btn-default--green">Fale com um consultor</a> 
+                                </span>
+                            </div>
+                        </div>    
+                    </li>
+                    <li class="banner__carousel-item">
+                        <figure class="banner__carousel-figure">
+                            <img src="assets/images/slide02.png">
+                        </figure>
+                        <div class="banner__carousel-legend">
+                    
+                            <h3 class="banner__carousel-title wow fadeInUp">Desenvolvimento de <br>Aplicativos para smartphones</h3>
+                      
+                            <p class="banner__carousel-subtitle wow fadeInUp">
+                            Desenvolvemos aplicativos criativos, inovadores e sob medida para o seu negocio</p> <br/><br/>
+                            
+                            <div class="banner__carousel-btns wow zoomIn">
+                                <span>
+                                    <a href="#contato" title="Conheça os planos" alt="Conheça os planos" class="btn-default">Faça um orçamento gratuito</a>
+                                </span>
+                                <span>
+                                  
+                                    <a href="https://api.whatsapp.com/send?phone=558599910680" title="Conheça os planos" alt="Conheça os planos" class="btn-default btn-default--green">Fale com um consultor</a> 
+                                </span>
+                            </div>
+                        </div>    
+                    </li>
+                </ul>
+        </section>
+        <section class="quem-somos" id="q-somos">
+            <header class="header-section header-section--white">
+                <h2 class="header-section__title header-section__title--white">Quem Somos Nós</h2>
+                <p class="header-section__subtitle header-section__subtitle--white">A Devari é uma empresa especialistas na criação de programas para iPhone, iPad e Android. Criamos incríveis soluções mobile que irão potencializar os negócios de sua empresa</p>
+            </header>
+            <article class="quem-somos__sobre">
+                <div class="container">
+                    <ul class="quem-somos__lista">
+                        <li class="quem-somos__lista-item">
+                            <i class="wow zoomIn icon fa fa-check"></i><span>Temos expertise em criar soluções SOA – Service-Oriented Architecture.</span></li>
+                        <li class="quem-somos__lista-item">
+                            <i class="wow zoomIn icon fa fa-check"></i><span>Somos agnósticos a tecnologias; conseguimos plugar, consumir e integrar qualquer tipo de solução.</span></li>
+                        <li class="quem-somos__lista-item">
+                            <i class="wow zoomIn icon fa fa-check"></i><span>Lidamos com as mais diversas e avançadas tecnologias de arquitetura computacional, atualização de versões e orquestração.</span></li>
+                        <li class="quem-somos__lista-item">
+                            <i class="wow zoomIn icon fa fa-check"></i><span>Utilizamos metodologia ágil de desenvolvimento chamada SCRUM, na qual é feito o levantamento de todos os requisitos.</span></li>
+                        <li class="quem-somos__lista-item">
+                            <i class="wow zoomIn icon fa fa-check"></i><span>Pesquisa e inovação estão no nosso DNA. Em constante otimização de processos, construímos tecnologias proprietárias de mineração de dados</span></li>
+                    </ul>
+                    <br/><br/>
+                    <header class="header-section header-section--white">
+                        <h2 class="header-section__top-title header-section__top-title--white">Satisfação de nossos clientes</h2>
+                    </header>
+                    <ul class="quem-somos__carousel" id="quem-somos">
+                        <li>
+                            <img class="wow zoomIn" src="assets/images/mazzulo.jpg" alt="">
+                            <p>Trabalhar com a equipe da Devari, foi maravilhoso. Sempre atenciosos, cuidadosos com detalhes e acima de tudo com conhecimento
+                            bastante vasto! Parabéns pela equipe de profissionais, com certeza voltaremos a fazer negocio.</p>
+                            <h4>- Marcos Mazullo -</h4>
+                            <h5>CEO, Pousada das Águias</h5>
+                        </li>
+                        <li>
+                            <img class="wow zoomIn" src="assets/images/alan_ahmar.jpg" alt="">
+                            <p>Equipe dedicada, inteligente e muito ágil. Estou muito empolgado com a implementação do meu projeto e 
+                                muito grato ao Robério Cavalcante!</p>
+                            <h4>- Alan Ahmar -</h4>
+                            <h5>Head Trainer, INEXH</h5>
+                        </li>
+                    </ul>  
+                </div>
+            </article>
+        </section>
+         <section class="portfolio" id="portfolio">
+            <header class="header-section">
+                <h3 class="header-section__top-title">Nosso Portfólio</h3>
+                <h2 class="header-section__title">Alguns dos nossos aplicativos</h2>
+            </header>
+            <article class="portfolio__conteudo">
+                <div class="container">
+                    
+                    <ul class="portfolio__list" id="portfolio-carousel">
+                        <li class="portfolio__list-item wow zoomIn">
+                            <figure>
+                                <img src="assets/images/app-lencois.png">
+                                <figcaption>
+                                    <h5>Aplicativo dos Lençois Maranhenses</h5>
+                                     <p>
+                                       Aplicativo desenvolvido em parceria com empresários dos Lençois Maranhenses, guia de turismo completo.
+                                    </p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                         <li class="portfolio__list-item wow zoomIn">
+                            <figure>
+                                <img src="assets/images/secran.png">
+                                <figcaption>
+                                    <h5>Aplicativo do Clube de Vantagens Secran</h5>
+                                    <p> 
+                                       Aplicativo desenvolvido para clientes da empresa SECRAN fazerem negócios entre si com desconto.
+                                    </p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                         <li class="portfolio__list-item wow zoomIn">
+                            <figure>
+                                <img src="assets/images/tacomseguro.png">
+                                <figcaption>
+                                    <h5>Aplicativo da Startup TaComSeguro.com</h5>
+                                    <p>Uma startup para fazer contratação de seguros auto online do seu automóvel. 
+                                    </p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                    </ul>
+
+                </div>
+            </article>
+        </section>
+        <section class="services" id="servicos">
+            <header class="header-section header-section--white">
+                <h3 class="header-section__top-title header-section__top-title--white">Serviços oferecidos</h3>
+                <h2 class="header-section__title header-section__title--white">O que fazemos</h2>
+            </header>
+            <article class="services__conteudo">
+                <div class="container">
+                   
+                    <ul class="services__list" id="services">
+                        <li class="services__list-itens">
+                           
+                               
+                                <div class="services__list-icon">
+                                    <i class="wow zoomIn fa fa-apple"></i>
+                                </div>
+                               
+                                <div class="services__list-legend">
+                                    <h4>Desenvolvimento Nativo para iOS</h4>
+                                    <p>Criação de aplicativos nativos para iOS 8 e 9, feitos para rodar em iPhones, iPads e iPods com diversas dimensões e resoluções de tela. Podem ser baixados pela Apple Store e possuem velocidade e performance otimizadas, proporcionando uma experiência superior aos usuários.</p>
+                                </div>
+                            
+                        </li>
+                         <li class="services__list-itens">
+                           
+                               
+                                <div class="services__list-icon">
+                                    <i class="wow zoomIn fa fa-android"></i>
+                                </div>
+                               
+                                <div class="services__list-legend">
+                                    <h4>Desenvolvimento Nativo para Android</h4>
+                                    <p>Criação de aplicativos nativos para Android Jelly Bean (4.1), KitKat (4.4), Lollipop (5.0) e Marshmallow (6.0), atingindo milhares de dispositivos diferentes. Podem ser baixados pela Google Play Store e também possuem velocidade e performance otimizadas.</p>
+                                </div>
+                            
+                        </li>
+                         <li class="services__list-itens">
+                           
+                               
+                                <div class="services__list-icon">
+                                    <i class="wow zoomIn fa fa-html5"></i>
+                                </div>
+                               
+                                <div class="services__list-legend">
+                                    <h4>Desenvolvimento de Aplicativos Híbridos</h4>
+                                    <p>Criação de aplicativos multiplataforma para iOS, Android and Windows Phone usando HTML5, CSS3, Javascript e o framework PhoneGap/Cordova. A programação é mais rápida e as regras de negócio são compartilhadas entre todas as plataformas, evitando retrabalho.</p>
+                                </div>
+                            
+                        </li>
+                        <li class="services__list-itens">
+                           
+                               
+                                <div class="services__list-icon">
+                                    <i class="wow zoomIn fa fa-trophy"></i>
+                                </div>
+                               
+                                <div class="services__list-legend">
+                                    <h4>Desenvolvimento de Protótipos e MVPs</h4>
+                                    <p>Criação rápida de protótipos e produtos mínimos viáveis (MVPs) para validação de ideias e modelos de negócios, antes de investir em uma aplicação completa. Permite testar hipóteses, obter feedback dos usuários e pivotar o modelo. Ideal para StartUps e pequenas empresas.</p>
+                                </div>
+                            
+                        </li>
+                        <li class="services__list-itens">
+                           
+                               
+                                <div class="services__list-icon">
+                                    <i class="wow zoomIn fa fa-tachometer"></i>
+                                </div>
+                               
+                                <div class="services__list-legend">
+                                    <h4>Paineis Administrativos e Serviços de Backend</h4>
+                                    <p>Criação de sistemas server side para gestão de usuários, tabelas auxiliares e demais configurações dos aplicativos. Desenvolvimento de WebAPIs e Webservices, que retornam XML e JSON e podem ser consumidos em nuvem, por qualquer tecnologia no lado cliente.</p>
+                                </div>
+                            
+                        </li>
+                        <li class="services__list-itens">
+                           
+                               
+                                <div class="services__list-icon">
+                                    <i class="wow zoomIn fa fa-rocket"></i>
+                                </div>
+                               
+                                <div class="services__list-legend">
+                                    <h4>Metodologia Ágil</h4>
+                                    <p>Utilização de metologias ágeis, como Scrum e Agile, para reduzir o tempo do desenvolvimento, diminuir os erros e permitir melhorias incrementais nos aplicativos. Priorização dos indivíduos e suas interações, com foco em uma comunicação frequente com os nossos clientes.</p>
+                                </div>
+                            
+                        </li>
+                    </ul>
+               </div>
+            </article>
+        </section>
+        <section class="create-apps" id="recursos">
+            <header class="header-section">
+                <h3 class="header-section__top-title">As melhores funcionalidades</h3>
+                <h2 class="header-section__title">Recursos para o seu aplicativo</h2>
+            </header>
+            <article class="create-apps__conteudo">
+                <div class="container">
+                    <ul class="list-apps">
+                        <li class="list-apps__item">
+                            <h4 class="list-apps__title"><i class="wow zoomIn fa fa-calendar" aria-hidden="true"></i>Agendamento</h4>
+                            <p class="list-apps__subtitle">Organize e verifique compromissos. Agende reuniões, consultas e tarefas pessoais ou profissionais.</p>
+                        </li>
+                         <li class="list-apps__item">
+                            <h4 class="list-apps__title"><i class="wow zoomIn fa fa-database" aria-hidden="true"></i>Banco de dados</h4>
+                            <p class="list-apps__subtitle">Insira, atualize, remova e consulte qualquer informação no seu app em tempo real.</p>
+                        </li>
+                         <li class="list-apps__item">
+                            <h4 class="list-apps__title"><i class="wow zoomIn fa fa-camera" aria-hidden="true"></i>Camera</h4>
+                            <p class="list-apps__subtitle">Permita que seu cliente tire fotos de produtos, selfies para o perfil e grave videos.</p>
+                        </li>
+                         <li class="list-apps__item">
+                            <h4 class="list-apps__title"><i class="wow zoomIn fa fa-comments-o" aria-hidden="true"></i>Chat</h4>
+                            <p class="list-apps__subtitle">Comunicação para suporte, tirar dúvidas, conversas empresariais ou pessoais.</p>
+                        </li>
+                        <li class="list-apps__item">
+                            <h4 class="list-apps__title"><i class="wow zoomIn fa fa-barcode" aria-hidden="true"></i>Codigo de barras</h4>
+                            <p class="list-apps__subtitle">Seu app poderá reconhecer automaticamente qualquer código de barras através da câmera.</p>
+                        </li>
+                        <li class="list-apps__item">
+                            <h4 class="list-apps__title"><i class="wow zoomIn fa fa-download" aria-hidden="true"></i>Dowloads</h4>
+                            <p class="list-apps__subtitle">Disponibilize para seus clientes documentos, audios, videos ou imagens.</p>
+                        </li>
+                        <li class="list-apps__item">
+                            <h4 class="list-apps__title"><i class="wow zoomIn fa fa-paper-plane" aria-hidden="true"></i>Envio de email</h4>
+                            <p class="list-apps__subtitle">Envie informações diretamente do seu app para qualquer email 
+                            pessoal ou profissional.</p>
+                        </li>
+                        <li class="list-apps__item">
+                            <h4 class="list-apps__title"><i class="wow zoomIn fa fa-filter" aria-hidden="true"></i>Filtros</h4>
+                            <p class="list-apps__subtitle">Filtre suas buscas por distância, peso, região, local e muito mais em tempo real!</p>
+                        </li>
+                         <li class="list-apps__item">
+                            <h4 class="list-apps__title"><i class="wow zoomIn fa fa-trophy" aria-hidden="true"></i>Gamificacao</h4>
+                            <p class="list-apps__subtitle">Dinamize seu app e torne-o bem mais divertido, mesmo em ambientes fora do contexto de jogos.</p>
+                        </li>
+                         <li class="list-apps__item">
+                            <h4 class="list-apps__title"><i class="wow zoomIn fa fa-filter" aria-hidden="true"></i>Geocalizacao</h4>
+                            <p class="list-apps__subtitle">Integramos seu aplicativo com o gMaps ou Waze, permitindo utilizar 100% dessas tecnologias.</p>
+                        </li>
+                         <li class="list-apps__item">
+                            <h4 class="list-apps__title"><i class="wow zoomIn fa fa-usd" aria-hidden="true"></i>Pagamento</h4>
+                            <p class="list-apps__subtitle">Disponibilize pagamento via cartão de crédito ou debito integrado com vários meios de pagamento.</p>
+                        </li>
+                         <li class="list-apps__item">
+                            <h4 class="list-apps__title"><i class="wow zoomIn fa fa-bell" aria-hidden="true"></i>Push Notification</h4>
+                            <p class="list-apps__subtitle">Alerte seu cliente das principais informações, novidades, promoções, lembretes e muito mais.</p>
+                        </li>
+                        <li class="list-apps__item">
+                            <h4 class="list-apps__title"><i class="wow zoomIn fa fa-qrcode" aria-hidden="true"></i>Qr code</h4>
+                            <p class="list-apps__subtitle">Seu app poderá reconhecer automaticamente qualquer QR Code através da câmera.</p>
+                        </li>
+                        <li class="list-apps__item">
+                            <h4 class="list-apps__title"><i class="wow zoomIn fa fa-share" aria-hidden="true"></i>Redes sociais</h4>
+                            <p class="list-apps__subtitle">Permite que seu cliente faça login ou compartilhe dados com as principais redes sociais.</p>
+                        </li>
+                        <li class="list-apps__item">
+                            <h4 class="list-apps__title"><i class="wow zoomIn fa fa-location-arrow" aria-hidden="true"></i>Rota</h4>
+                            <p class="list-apps__subtitle">Trace as melhores rotas para o seu cliente através do Google Maps ou Waze.</p>
+                        </li>
+                        <li class="list-apps__item">
+                            <h4 class="list-apps__title"><i class="wow zoomIn fa fa-video-camera" aria-hidden="true"></i>Video</h4>
+                            <p class="list-apps__subtitle">Inclua videos promocionais, educacionais ou informativos no próprio aplicativo.</p>
+                        </li>
+                    </ul>
+                    <div class="create-apps__btns wow zoomIn">
+                        <span>
+                            <a href="#contato" title="Conheça os planos" alt="Conheça os planos" class="btn-default">Faça um orçamento gratuito</a>
+                        </span>
+                        <span>
+                            <a href="https://api.whatsapp.com/send?phone=558599910680" title="Conheça os planos" alt="Conheça os planos" class="btn-default btn-default--green">Fale com um consultor</a>
+                        </span>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section class="contact" id="contato">
+            <header class="header-section header-section--white">
+                <h2 class="header-section__title header-section__title--white">Fale sobre seu Projeto</h2>
+                <p class="header-section__subtitle header-section__subtitle--white">Deseja que a Devari projete e desenvolva um aplicativo para sua empresa? Fale um pouco sobre seu projeto! Preencha os campos abaixo informando o máximo de informações possíveis. <br>Estas informações serão utilizadas para evoluirmos com o entendimento de sua ideia. Trabalhamos com total confidencialidade no tratamento de suas informações.</p>
+            </header>
+            <article class="contact__conteudo">
+                <div class="container">      
+                    <div class="contact__form">
+                        
+                        <form action="contact.php"  class="formulario" name="formulario_registro" id="formulario_registro" method="post">
+                            <div>
+                                <h3>Seu Dados</h3>
+                                <div class="contact__inputs">
+                                    <div class="contact__input-group">
+                                        <input type="text" id="nome" name="nome" required="required"/>
+                                        <label class="label" for="nome">Nome*</label>
+                                    </div>
+                                    <div class="contact__input-group">
+                                        <input type="text" id="fone" name="fone" maxlength="15" required="required"/>
+                                        <label class="label" for="telefone">Telefone*</label>
+                                    </div>
+                                    <div class="contact__input-group contact__input-group--email">
+                                        <input type="email" id="email" name="email" required="required"/>
+                                        <label class="label" for="email">Email*</label>
+                                    </div>
+                                </div>
+                                
+                               
+                                <h3>Seu projeto ou aplicativo</h3>
+                                <div class="contact__inputs">
+                                    <div class="contact__input-group">
+                                        <input type="text" id="titulo" name="titulo"/>
+                                        <label class="label" for="titulo">Titulo*</label>
+                                    </div>
+                                    <div class="contact__input-group">
+                                        <input type="text" id="projeto" name="projeto"/>
+                                        <label class="label label-projeto" for="projeto">Projeto ou App. similar ao que você deseja? Qual?*</label>
+                                    </div>
+                                    <div class="contact__input-group contact__input-group--textarea">
+                                        <textarea class="textarea" id="descricao" name="descricao" rows="10" cols="48" placeholder="Detalhes do projeto ou aplicativo*" /></textarea>
+                                    </div>
+                                    <input type="submit" name="btn-submit" onclick="return validaForm()" value="Enviar"/>
+                                </div>
+                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <footer class="footer">
+            <div class="container">
+            <div class="footer__layertop">
+                <ul class="footer__bloco">
+                    <h3 class="footer__title">Contatos</h3>
+                    <li class="footer__bloco-item footer__bloco-item--address">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i> 
+                        <address>Rua Ieda Pereira, Nº 534, Sala 05 - Pq. Manibura - Fortaleza/CE - CEP: 60821-572</address>
+                    </li>
+                    <li class="footer__bloco-item">
+                        <div>
+                            <i class="fa fa-volume-control-phone" aria-hidden="true"></i> 
+                            <p>(85) 3025 - 0000</p>
+                        </div>
+                    </li>
+                    <li class="footer__bloco-item">
+                        <div>
+                            <i class="fa fa-whatsapp" aria-hidden="true"></i> 
+                            <p>(85) 99862 - 4149</p>
+                        </div>
+                    </li>     
+                    <li class="footer__bloco-item">
+                        <div>
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i> 
+                            <p>contato@i9me.com.br</p>
+                        </div>    
+                    </li> 
+                     
+                </ul>
+                <ul class="footer__bloco">
+                    <h3 class="footer__title">Design</h3>
+                    <li><a href="#">Design de Marcas</a></li>
+                    <li><a href="#">Papelaria Corporativa</a></li>
+                    <li><a href="#">Anúncios On/Off</a></li>
+                    <li><a href="#">Ilustrações</a></li>
+                </ul>
+                <ul class="footer__bloco">
+                    <h3 class="footer__title">Web</h3>
+                    <li><a href="#">Websites</a></li>
+                    <li><a href="#">Lojas Virtuais</a></li>
+                    <li><a href="#">Campanhas</a></li>
+                    <li><a href="#">Consultorias</a></li>
+                </ul>
+               
+                <div class="footer__bloco footer__bloco--iframe">
+                    
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fi9mewebdesign%2F%3Fhc_ref%3DSEARCH%26fref%3Dnf&tabs=timeline&width=340&height=223&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" style="border:none;overflow:hidden;max-width:100%;" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer__layerbottom">
+            <div class="container">
+                <div class="bar-flex">
+                    
+                <div class="header__brand header__brand--footer">
+                    <a href="<?php echo home_url(); ?>">            
+                        <h1 class="header__logo">
+                            <span class="header__letter header--i">I</span>
+                            <span class="header__letter header--n">9</span>
+                            <span class="header__letter header--m">M</span>
+                            <span class="header__letter header--e">E</span>
+                        </h1>           
+                        <div class="header__name header__name--footer">
+                            <span class="">Web & Design</span>
+                        </div>
+                    </a>
+                 </div>
+                <div class="footer__copyright">
+                    <span>Copyright © 2017 <strong>I9ME Web & Design.</strong> Todos os direitos reservados.</span>
+                </div>
+                </div>
+            </div>
+        </div>
+    
+    </footer>
+    </main>
+    <script src="assets/js/main.min.js"></script>
+    <script> new WOW().init(); </script>
+    <!-- <script>
+        window.intercomSettings = {
+        app_id: "q47qtgsb"
+    };
+    </script>
+    <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/q47qtgsb';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script> -->
+
+<!--    <script src="https://todoprint.com.br/media/isidora/js/maskedinput/maskedinput.js"></script> -->
+    
+    <script language="javascript">
+      function ApplyCelular94Digits(campo)
+        {
+        campo.focusout(function(){
+            var phone, element;
+            element = jQuery(this);
+            jQuery.mask.definitions['~'] = $.mask.definitions['*'];
+            delete $.mask.definitions['*'];  
+            element.unmask();
+            element.mask("(99) 9 9999-9999");
+        }).trigger('focusout');
+        }
+    </script>
+    <script>
+        ApplyCelular94Digits(jQuery('#fone'));
+    </script>
+
+     <!-- Start of Async Drift Code -->
+    <script>
+    !function() {
+      var t;
+      if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
+      t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+      t.factory = function(e) {
+        return function() {
+          var n;
+          return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+        };
+      }, t.methods.forEach(function(e) {
+        t[e] = t.factory(e);
+      }), t.load = function(t) {
+        var e, n, o, i;
+        e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
+        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
+        n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+      });
+    }();
+    drift.SNIPPET_VERSION = '0.3.1';
+    drift.load('7d6brx2fhhz7');
+
+    </script>
+    <!-- End of Async Drift Code -->
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110182298-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+ 
+        gtag('config', 'UA-110182298-1');
+    </script>
+   
+</body>
+</html>

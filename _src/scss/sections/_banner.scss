@@ -1,0 +1,344 @@
+.banner{
+	@extend %boxFull;
+	$self : &;
+	@include e('carousel'){
+		@include span(1);
+		margin: 0;
+		height: 100vh;
+	}
+	@include e('carousel-item'){
+		@include span(1);
+	}
+	@include e('carousel-figure'){
+		@include span(1);
+		position: relative;
+		margin: 0;
+		&:before{
+				content: '';
+				position: absolute$i;
+				background: url(../images/overlay.png);
+				background-color: rgba(0,0,0,0.39);
+				height: 100%;
+				width: 100%;
+				display: block;
+			}
+		img{
+			height: 100vh$i;
+			max-width: 100%;
+    		object-fit: cover;
+
+			@include respond-to(sm){
+				height: 100vh$i;
+				object-fit: inherit;
+				max-width: auto;
+			}
+			
+		}
+	}
+	@include e('carousel-legend'){
+		@include span(1);
+		top: 20%;
+		position: absolute;
+    	transform: translateY(20%);
+    	text-align: center;
+
+    	@include respond-to(sm){
+    		transform: translateY(25%);
+    		top: 25%;
+    	}
+	}
+	@include e('carousel-btns'){
+		display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    flex-direction: column;
+	    @include respond-to(sm){
+	    	display: inherit;
+	    	margin: 30px 0;
+	    }
+
+	    span{
+	    	margin: 20px 0;
+	    	@include respond-to(sm){
+	    		margin: 0 10px;
+	    	}
+	    }
+	}
+
+	@include e('carousel-title'){
+		color: #fff;
+	    @include fonts(500,25);
+	    margin: 0;
+	    @include respond-to(sm){
+	    	@include fonts(700,40);
+	    }
+	    @include respond-to(md){
+	    	@include fonts(700,60);
+	    }
+	}
+	@include e('carousel-subtitle'){
+		@include fonts(300,16);
+		display: inline-block;
+	    color: #fff;
+	    max-width: 260px;
+
+	    @include respond-to(sm){
+	    	font-size: 14px;
+	    	max-width: 750px;
+	    }
+	    @include respond-to(md){
+	    	font-size: 18px;
+	    	max-width: 750px;
+	    }
+	}
+	#carousel-banner .owl-dots{
+		position: relative;
+		bottom: 33px;
+
+		.owl-dot{
+			background: #a9a9a9;
+			border-color: #a9a9a9;
+		}
+		.owl-dot.active{
+			background: $white$i;
+			border-color: $white;
+		}
+	}
+	#carousel-banner .owl-prev,#carousel-banner .owl-next{
+		&:before{
+			font-size: 100px$i;
+			color: $white;
+		}
+		
+	}
+	#carousel-banner .owl-prev{
+		left: 5%;
+	}
+	#carousel-banner .owl-next{
+		right: 5%;
+	}
+}
+.btn-default{
+	background: #3498db;
+    color: #fff;
+    padding: 13px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 12px;
+
+    @include m('green'){
+    	background: #2ecc71;
+    }
+}
+
+
+
+
+	//background: url(../images/banner.png)no-repeat;
+	//background-size: cover;
+	//background-position: center;
+	//height: 100vh;
+	//position: relative;
+
+	// @include e("texto"){
+	//     @extend %boxFull;
+ //    	transform: translateY(306%);
+ //    	text-align: center;
+	// }
+	// @include e("logo-banner"){
+	//     @extend %boxFull;
+ //    	margin: 0;
+ //    	text-align: center;
+ //    	transform: translateY(20%);
+ //    	position: absolute;
+ //    	left: 0;
+ //    	@include respond-to(md){
+ //    		transform: translateY(40%);
+ //    	}
+
+ //    	img{
+ //    		width: 200px;
+ //    		height: 200px;
+ //    		@include respond-to(sm){
+ //    			width: 265px;
+ //    			height: 268px;
+ //    		}
+ //    	}
+	// }
+	// @include e("title"){
+	//    	@include fonts(400,34);
+	//    	color: $white;
+	//    	@include respond-to(sm){
+	//    		@include fonts(400,55);
+	//    	}
+	// }
+	// @include e("icon-scroll"){
+	// 	@include span(1);
+	// 	    height: 112px;
+	// 	    position: absolute;
+	// 	    bottom: 0;
+	// 	    left: 0;
+	// }
+	// @include e("objeto-scroll"){
+	// 	@include span(1);
+	// 	transform: translateX(46%);
+	// 	@include respond-to(sm){
+	// 		transform: translateX(50%);
+	// 	}
+		
+	// }
+// 	@include e("mouse"){
+		
+// 		  --ease-out-quart: cubic-bezier(.165, .84, .44, 1);
+// 		  //background: $bg-color;
+// 		  border: 1px solid $mouse-color;
+// 		  position: absolute;
+// 		  top: 0;
+// 		  width: $mouse-width;
+// 		  height: $mouse-height;
+// 		  border-radius: 70px;
+// 		  animation: scrollWheel 1.5s var(--ease-out-quart) infinite alternate;
+
+// 		  &:after, &:before {
+// 		    content: "";
+// 		    position: absolute;
+// 		    top: 0;
+// 		    right: calc(50% - #{$mouse-border}/2);
+// 		    background: $mouse-color;
+// 		  }
+
+// 		  &:after {
+// 		    width: $mouse-border;
+// 		    height: 12px;
+// 		    border-radius: 10px;
+// 		  }
+
+// 		  &:before {
+// 		    --ease-out-quart: cubic-bezier(.165, .84, .44, 1);
+// 		    top: 5%;
+// 		    left: calc(50% - #{$mouse-border}*3/2);
+// 		    border-radius: 50%;
+// 		    width: $mouse-border*3;
+// 		    height: $mouse-border*5;
+// 		    z-index: 999;
+// 		    animation: scrollWheel 1.5s var(--ease-out-quart) infinite alternate;
+// 		  }
+		
+// 		@keyframes scrollWheel{
+// 		  100% {
+// 		    top: $mouse-height / 4;
+// 		  }
+// 		}
+// 	}
+// 	.icon-scroll {
+// 	position: absolute;
+// 	bottom: 4%;
+// 	left: 50%;
+// 	width: 4px;
+// 	height: 50px;
+// 	z-index: 99999;
+// 	//transform: translateX(50%)translateY(50%); 
+// 	opacity: .4s;
+// 	}	
+// 	.icon-scroll span {
+// 	display: block;
+// 	width: 10px;
+// 	height: 11px;
+// 	border-right: 1px solid rgba(255,255,255,.8);
+// 	border-bottom: 1px solid rgba(255,255,255,.8);
+// 	margin: 0 0 -3px 5px;
+
+// 	-webkit-transform: rotate(45deg);
+// 	-ms-transform: rotate(45deg);
+// 	transform: rotate(45deg);
+// 	-webkit-animation: mouse-scroll 1s infinite;
+//     -moz-animation: mouse-scroll 1s infinite;
+//     animation: mouse-scroll 1s infinite;
+//     -webkit-animation-direction: alternate;
+// 	animation-direction: alternate;
+// 	}
+
+//   	.icon-scroll .a1 {
+//     margin-top: 6px;
+//     -webkit-animation-delay: .1s;
+//     -moz-animation-delay: .1s;
+//     animation-delay: .1s;
+//   	}
+
+//   	.icon-scroll .a2 {
+//     -webkit-animation-delay: .2s;
+//     -moz-animation-delay: .2s;
+//     animation-delay: .2s;
+//   	}
+
+//   	.icon-scroll .a3 {
+//     -webkit-animation-delay: .3s;
+//     -moz-animation-delay: .3s;
+//     animation-delay: .3s;
+//   	}
+
+// 	.icon-scroll .mouse {
+// 		height: 22px;
+// 		width: 14px;
+// 		border: 1px solid rgba(255,255,255,.8);
+// 		border-radius: 10px;
+// 	}
+
+// 	@-webkit-keyframes mouse-scroll {
+// 		0%   { opacity: 0;}
+// 		50%  { opacity: .5;}
+// 		100% { opacity: 1;}
+// 	}
+// 	@-moz-keyframes mouse-scroll {
+// 		0%   { opacity: 0; }
+// 		50%  { opacity: .5; }
+// 		100% { opacity: 1; }
+// 	}
+// 	@keyframes mouse-scroll {
+// 		0%   { opacity: 0; }
+// 		50%  { opacity: .5; }
+// 		100% { opacity: 1; }
+// 	}
+
+// .down-arrow {
+//     position: absolute;
+//     color: white;
+//     font-size: 25px;
+//     bottom: 10px;
+//     left: 46%;
+//     //left: 50%;
+//     transform: translateY(-50%)translateX(46%);
+//     @include respond-to(sm){
+//     	left: 50%;
+//     	transform: translateY(-50%)translateX(50%);
+
+//     }
+    
+  //}
+
+
+// }
+// .btn-default{
+// 	@include fonts(400,17);
+// 	width: 100%;
+// 	background: $cor-primaria;
+// 	color: $white;
+//    	max-width: 270px;
+//    	display: block;
+//    	line-height: 1;
+//     height: 50px;
+//     border-radius: 9px;
+//     text-align: center;
+//     padding: 15px;
+//     margin: 0 auto;
+// 	@include respond-to(sm){
+// 		@include fonts(400,15);
+// 		 max-width: 180px;
+// 		 padding: 10px;
+// 		 height: 40px;
+// 	}
+// 	@include respond-to(md){
+// 		@include fonts(400,17);
+// 		 max-width: 200px;
+// 	}
+

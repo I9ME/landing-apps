@@ -1,0 +1,39 @@
+.create-apps{
+	$self : &;
+	@extend %boxFull;
+	position: relative;
+	padding: 30px 0 0;
+	background: $white;
+
+	@include respond-to(sm){
+		padding: 60px 0;
+	}
+
+
+	@include e('conteudo'){
+		@extend %boxFull;
+		margin: 30px 0 0;
+
+	}
+	@include e('btns'){
+		@extend %boxFull;
+		display: flex;
+		align-items: center;
+    	justify-content: center;
+    	margin: 30px 0;
+    	flex-direction: column;
+    	@include respond-to(sm){
+    		flex-direction: inherit;
+    	}
+
+    	span{
+    		margin: 20px 0px;
+		    width: auto;
+		    float: left;
+
+		    @include respond-to(sm){
+		    	margin: 0 10px;
+		    }
+    	}
+	}
+}

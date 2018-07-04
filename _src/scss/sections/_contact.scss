@@ -1,0 +1,191 @@
+.contact{
+	$self : &;
+	@extend %boxFull;
+	background: $blue5;
+	padding: 30px 0;
+
+	@include respond-to(sm){
+    padding: 60px 0;
+    height: 100%;
+    min-height: 670px;
+  }
+  @include e('conteudo'){
+    @extend %boxFull;
+    margin: 30px 0 0;
+  }
+  @include e('form'){
+    @include span(1);
+  }
+  @include e('inputs'){
+     @extend %boxFull;
+  }
+  @include e('input-group') {
+    @include span(1);
+    position: relative;
+    margin-bottom: 32px;
+    
+    @include respond-to(sm){
+      @include col(1/2, $cycle: 2);
+    }
+
+    @include m('email'){
+      @include span(1);
+    }
+    @include m('textarea'){
+      @include span(1);
+      margin-right: 0$i;
+      margin: 0;
+    }
+  }
+
+  @include e('input-group'){ 
+
+    input[type="text"],
+    input[type="email"],
+    input[type="text2"]{
+      font-family: "Roboto", Arial;
+      font-size: 16px;
+      color: #000;
+      width: 100%;
+      outline: none;
+      padding: 15px;
+      background: $white;
+      border: none;
+      border-bottom: 1px solid rgba(255,255,255,0.5);
+      transition: all 0.1s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="text"]:active,
+    input[type="email"]:focus,
+    input[type="email"]:active,
+    input[type="text2"]:focus,
+    input[type="text2"]:active{
+      outline: none;
+      border-bottom: 2px solid white;
+    }
+    input[type="text"].error,
+    input[type="email"].error,
+    input[type="text2"].error{
+      border-bottom: 2px solid $black;
+    }
+    input[type="text"].error + label,
+    input[type="email"].error + label,
+    input[type="text2"].error{
+      color: $black;
+      font-size: 11px;
+    }
+
+    label.label{
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      margin-left: 15px;
+      @include fonts(100,18);
+      line-height: 16px;
+      position: absolute;
+      top: 16px;
+      left: 0;
+      color: #757575;
+    }
+
+    label.label.active {
+      top: -15px;
+      margin: 0;
+      font-size: 12px;
+      line-height: 12px;
+      color: rgba(255,255,255,0.5);
+    }
+    
+    .error label{
+      color: #D32F2F;  
+    }
+    .error label:before {
+      border: 2px solid #D32F2F;
+    }
+    .error label:hover {
+      background: rgba(211, 47, 47, 0.2);
+    }
+  }
+}
+
+.formulario{
+	max-width: 680px;
+  display: block;
+  margin: 0 auto;
+    
+    h3{
+      color: $white;
+      @include fonts(100,20);
+    }
+    input[type="submit"] {
+      @include fonts(700,18);
+      background: #2ecc71;
+      border: none;
+      color: $white;
+      cursor: pointer;
+      display: inline-block;
+      padding: 15px;
+      text-transform: uppercase;
+      width: 100%;
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+    }
+    input[type="submit"]:hover {
+      background: #1e8449;
+    }
+}
+
+
+
+// .formulario .input-group.radio label {
+//   display: inline-block;
+//   cursor: pointer;
+//   color: rgba(255,255,255,0.7);
+//   position: relative;
+//   padding: 5px 15px 5px 51px;
+//   font-size: 1em;
+//   border-radius: 3px;
+//   -webkit-transition: all 0.3s ease;
+//   transition: all 0.3s ease;
+// }
+// .formulario .input-group.radio label:hover {
+//   background: rgba(255,255,255,0.3);
+// }
+// .formulario .input-group.radio label:before {
+//   content: "";
+//   display: inline-block;
+//   width: 17px;
+//   height: 17px;
+//   position: absolute;
+//   left: 15px;
+//   top: 2px;
+//   border-radius: 50%;
+//   background: none;
+//   border: 2px solid white;
+// }
+
+// .formulario .input-group.radio input[type="radio"] {
+//   display: none;
+// }
+// .formulario .input-group.radio input[type="radio"]:checked + label:before {
+//   display: none;
+// }
+// .formulario .input-group.radio input[type="radio"]:checked + label {
+//   padding: 5px 15px;
+//   background: white;
+//   border-radius: 2px;
+//   color: #ffcc08;
+// }
+ 
+.label-projeto{
+   font-size: 11px$i;
+}
+
+.textarea{
+    padding: 15px 10px;
+    float: left;
+    width: 100%;
+    margin-bottom: 30px;
+    border: 0;
+
+}

@@ -1,0 +1,114 @@
+.sobre-contabilizar{
+	@extend %boxFull;
+
+	@include e('left'){
+		@include span(1);
+		@include respond-to(sm){
+			@include span(.5);
+		}
+		@include respond-to(md){
+			@include span(.6);
+		}
+	}
+	@include e('figure'){
+		margin: 0;
+		
+		img{
+			max-width: 100%;
+		}
+	}
+
+	@include e('right'){
+		@include span(1);
+		position: relative;
+		
+   
+		@include respond-to(sm){
+			@include span(.5);
+		}
+		@include respond-to(md){
+			@include span(.4);
+		}
+	}
+	@include e('legend'){
+		margin: 0;
+		min-height: 178px;
+		@include respond-to(sm){
+			position: absolute;
+	    	transform: translateY(10%);
+	    	top: 10%;
+		}
+			
+	}
+	@include e('item'){
+		
+			display: inline-block;
+			width: 100%;
+			 background: #f6f6f6;
+		
+	}
+}
+
+.title-banner{
+	@include fonts(400,25);
+	color: $cor-primaria;
+	text-align: center;
+	margin: 18px 0;
+	@include respond-to(sm){
+		@include fonts(400,25);
+		margin: 0 0 12px;
+	}
+	@include respond-to(md){
+		@include fonts(500,37);
+		margin: 30px 0;
+	}
+}
+.subtitle{
+	@include fonts(300,16);
+	color: $cor-primaria;
+	margin: 0;
+    padding: 0 5px;
+    text-align: center;
+    @include respond-to(sm){
+		@include fonts(400,16);
+		max-width: 320px;
+		margin: 0 auto 5px;
+	}
+	@include respond-to(md){
+		@include fonts(400,16);
+		max-width: 380px;
+		margin: 0 auto 30px;
+	}
+}
+
+#carousel-sobre-contabilizar{
+	margin: 0;
+	.owl-controls{
+		position: relative;
+		top: 0;
+	    margin: 30px 0 0;	
+	    @include respond-to(sm){
+			top: -4px;
+			margin: 0;
+	    }
+	    @include respond-to(md){
+			top: -4px;	    	
+	    }
+		.owl-dots .owl-dot.active{
+			background-color: $cor-primaria;
+    		border-color: $cor-primaria;
+		}
+		.owl-prev{
+			left: 0;
+			@include respond-to(sm){
+				display: none$i;
+			}
+		}
+		.owl-next{
+			right: 0;
+			@include respond-to(sm){
+				display: none$i;
+			}
+		}
+	}
+}

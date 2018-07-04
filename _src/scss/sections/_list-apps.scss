@@ -1,0 +1,46 @@
+.list-apps{
+	$self : &;
+	@extend %boxFull;
+	//margin: 50px 0 0; 
+
+	@include respond-to(sm){
+		//margin: 90px 0 0; 
+	}
+
+	@include e('item'){
+		@include span(1);
+		min-height: 130px;
+		padding: 0 10px;
+		display: flex;
+		align-items: flex-start;
+    	justify-content: center;
+    	flex-direction: column;
+
+    	@include respond-to(sm){
+			@include span(.33);
+			min-height: 200px;   
+    		align-items: flex-start;
+    		justify-content: flex-start;	    		
+	    }
+	    @include respond-to(md){
+			@include span(.25);	    		
+	    }
+		
+	}
+	@include e('title'){
+		@include fonts(700,20);
+		margin: 0;
+		text-transform: uppercase;
+		color: #004e69;
+		i{
+			margin-right: 5px;
+			color: #f58903;
+
+		}
+		
+	}
+	@include e('subtitle'){
+		@include fonts(400,16);
+		color: #484848;
+	}
+}

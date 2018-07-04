@@ -1,0 +1,94 @@
+.header-section{
+	$self : &;
+	@extend %boxFull;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+
+	&:after{
+		display: block;
+	    content: "";
+	    height: 4px;
+	    width: 40px;
+	    background: #8bafb9;
+	    margin: 10px auto;
+	    position: relative;
+
+	    @include respond-to(sm){
+	    	width: 200px;
+	    	margin: 28px auto;
+	    }
+	}
+	@include m('white'){
+		&:after{
+			display: block;
+		    content: "";
+		    height: 4px;
+		    width: 40px;
+		    background: $white;
+		    margin: 10px auto;
+		    position: relative;
+
+
+		    @include respond-to(sm){
+		    	width: 200px;
+		    	margin: 28px auto;
+		    }
+		}
+	}
+
+	@include e('top-title'){
+		@include fonts(700,20);
+		margin: 0;
+		color: #004e69;
+		@include respond-to(sm){
+			@include fonts(700,25);
+		}
+
+		@include m('white'){
+			color: $white;
+			@include fonts(500,25);
+		}
+	}
+
+	@include e('title'){
+		@include fonts(700,25);
+		color: #004e69;
+		margin: 0;
+
+		@include respond-to(sm){
+			@include fonts(700,30);
+		}
+		@include respond-to(md){
+			@include fonts(700,40);
+		}
+
+		@include m('white'){
+			color: $white;
+			padding: 0 15px;
+
+			@include respond-to(sm){
+				padding: 0;
+			}
+		}
+	}
+
+
+	@include e('subtitle'){
+		@include fonts(300,16);
+		margin: 0;
+		color: $white;
+		text-transform: capitalize;
+		@include m('white'){
+			color: $white;
+		    margin-top: 30px!important;
+		    max-width: 813px;
+		    display: block;
+		    margin: 30px auto;
+		    padding: 0 15px;
+		    @include respond-to(sm){
+		    	padding: 0;
+		    }
+		}
+	}
+}

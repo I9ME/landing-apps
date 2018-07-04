@@ -1,0 +1,71 @@
+// Primary mixin
+@mixin buttons {
+
+  .btn, a.btn, button {
+
+    //Cores Padrão
+    @include button($cor-primaria);
+    // @include radius(5px);
+
+    display: inline-block;
+    text-align: center;
+    transition: all .2s ease-in-out;
+    max-width: 260px;
+    width: 100%;
+
+    padding: rem(15) rem(22);
+    text-align: center;
+    transition: all .2s ease-in-out;
+    border-radius: 5px;
+    text-transform: uppercase;
+
+    font-size: rem(16);
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: darken($cor-primaria, 10%);
+      transition: all .2s ease-in-out;
+    }
+
+    /* &--red  { @include button($white, #a42b2a); border: 0; }
+    &--blue { @include button($white, blue); border: 0; }
+    &-pri  { @include button($white, #006eb9); }
+    &-sec  { @include button(#006eb9, #ffe6bf); } */
+  }
+}
+
+// Button mixin
+@mixin button($text-color, $bg-color:transparent) {
+  @include color-button($text-color, $bg-color);
+
+  &:hover, &:focus {
+    transition: all .2s ease-in-out;
+    @include color-button($text-color, lighten($bg-color, 10%));
+  }
+  &:active {
+    background: darken($bg-color, 5%);
+  }
+}
+
+// Color button mixin
+@mixin color-button($text-color, $bg-color) {
+  background: $bg-color;
+  color: $text-color;
+}
+
+@mixin btn-c($bg:#3dc0b9, $cor:#fff){
+    
+    background: $bg;
+    color: $cor;
+    border: 0;
+    border-radius: 0;
+ 
+
+    &:hover {
+      background: darken($bg, 10%);
+      color: $cor;
+    }
+}

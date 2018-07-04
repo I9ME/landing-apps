@@ -1,0 +1,78 @@
+//==========================================================================
+// VARIAVEIS
+// Definição das variavéis do Tema
+// Não remover nenhuma das variavéis para evitar crash do SASS
+//==========================================================================
+
+//-------------------------------
+// GRID
+// Define as variáveis da dimensão do projeto
+//-------------------------------
+
+//Classe padrão do Container
+$global-div: 'container';
+
+//Dimensão do container
+$lg-max : 1240px;
+$lg-md  : 90%;
+$lg-sm  : 768px;
+$lg-xs  : 568px;
+
+// Espaçamento Latera Default
+$space-lateral: 15;
+
+// Border Radius Default
+$border-radius: 5px;
+
+//-------------------------------
+// FONTS
+// Define as fonts do projeto
+//-------------------------------
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700');
+
+
+$font-default       : 'Rajdhani', Arial, helvetica, sans-serif !default;
+$font-secundaria    : 'Rajdhani' !default;
+$font-header        : 'Rajdhani' !default;
+
+//-------------------------------
+// Cores
+// Cuidado ao deletar variáveis.
+// Pode causar CRASH no SASS
+//-------------------------------
+$sucesso	: #098809;
+$erro 		: #ed0000;
+$white		: #fff;
+$black      : #000;
+$ccc			 : #ccc;
+$cor-primaria	 : #173e77;
+$cor-secundaria  : #3dc0b9;
+$cor-terciaria	 : #323232;
+$cor-titulos     : #7c7c7c;
+$cor-extra		 : #f9f9f9;
+$cor-dark        : #242424;
+$rodape          : $cor-terciaria;
+
+$blue1		: #0b244a;
+$blue2		: #005193;
+$blue3		: #4267b2;
+$blue4		: #173e77;
+$blue5		: #00375d;
+$blue6		: #0b293f;
+$blue7		: #0087EA;
+$blue8		: #00a5dc;
+$blue9		: #0072b8;
+$gray1		: #eaeaea;
+$gray2		: #222;
+$gray3		: #737373;
+
+
+//BOTAO SCROLL DO BANNER
+$mouse-width:  25px;
+$mouse-height: 40px;
+$mouse-border: 2px;
+$mouse-color:  #f7f7f7;
+//$bg-color: #262626;
+
+
+$i :  !important;

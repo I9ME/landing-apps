@@ -1,0 +1,180 @@
+.form {
+	margin: rem(30) 0;
+
+	input,
+	select,
+	textarea {
+		color: mix($black, $white, 65%);
+		border: 1px solid transparent;
+		background: $black;
+		font-size: rem(16);
+		padding: rem(20);
+		width: 100%;
+        max-width: 100%;
+		border-radius: 3px;
+		margin-bottom: 10px;
+
+        &:focus {
+            border-color: darken($black, 15%);
+        }
+
+        @include placeholder-text{
+			color: $cor-titulos;
+		}
+
+		@for $i from 1 through 12 {
+	  		&.form-col#{$i} {
+	    		@include col($i/12);
+			}
+		}
+	}
+
+    select {
+        line-height: 35px $i;
+    }
+
+    textarea {
+    	min-height: rem(200);
+    }
+
+	input[type=submit],
+	button {
+		@extend %centerBlock;
+		transition: all .2s ease-in-out;
+		border: 0;
+		text-align: center;
+		max-width: 120px;
+		font-size: rem(18);
+		font-weight: 700;
+		text-transform: uppercase;
+		color: $white;
+		background-color: $cor-primaria;
+		border-radius: rem(5);
+		padding: rem(10) rem(20);
+		cursor: pointer;
+		margin-top: rem(40);
+
+		&:hover {
+			backgroud-color: darken($cor-primaria, 15%);
+		}
+	}
+
+	//Modificador dinâmico
+	$form    : zip( $classes, $cor, $inputs );
+	@each $a in $form {
+
+		$cor-texto: #{nth($a, 2)};
+		$cor-input: #{nth($a, 3)};
+
+		@include m(#{nth($a, 1)}) {
+
+			input, select, textarea {
+				background-color: $cor-input;
+				border: 2px solid rgba($black, 0.2);
+				color: $cor-texto;
+
+                //placeholder class
+                @include placeholder-text {
+                    color: $cor-texto;
+                    font-weight: 300;
+                    text-transform: uppercase;
+                }
+
+			}
+		}
+	}
+}
+
+.form {
+    @include e('input') {
+        @include col(1);
+        margin-bottom: rem(3);
+
+        input {
+        	width: 100%;
+        	
+        }
+		
+
+        @include m('col') {
+        	// @include col(1);
+			@include respond-to(sm) {
+            	@include col(1/2);
+            }
+        }
+
+        @include m('col3') {
+        	@include respond-to(sm) {
+            	@include col(1/3);
+            }
+        }
+
+        // CUSTOM
+        @include m('col-custom3'){
+        	@include respond-to(sm) {
+				@include col(.333);
+			}
+		}
+
+		@include m('col-custom2'){
+			@include col(.75);
+			@include respond-to(sm) {
+				@include col(.233);
+			}
+		}
+
+		@include m('col-custom1'){
+
+			@include col(.25);
+			@include respond-to(sm) {
+				@include col(.1);
+			}
+		}
+    }
+}
+
+//CF7
+.wpcf7{
+	@extend %boxFull;
+}
+
+.wpcf7-form {
+	.form-msg{
+		@include fonts(normal, 18, $font-default);
+		padding: rem(16);
+		border-radius: $border-radius;
+		text-align: center;
+		color: $white;
+		display: block;
+		margin-bottom: 15px;
+		display: none;
+		float: left$i;
+    	width: 100%$i;
+	}
+
+	&.invalid {
+		.form-msg--erro {
+			background-color: $erro ;
+			display: block;
+		}
+	}
+
+	&.sent {
+		.form-msg--sucesso {
+			display: block;
+			background-color: $sucesso ;
+		}
+	}
+
+	.wpcf7-not-valid{
+		border: 1px solid $erro;
+		border-top: 1px solid $erro;
+		border-left: 1px solid $erro;
+		border-right: 1px solid $erro;
+	}
+}
+
+span.wpcf7-not-valid-tip,
+.wpcf7-response-output {
+    display: none !important;
+}

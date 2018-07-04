@@ -1,0 +1,21 @@
+//==========================================================================
+// PLACEHOLDER'S
+//==========================================================================
+%boxFull {
+	@extend %floatLeft;
+	width: 100%;
+}
+
+%floatLeft{
+	float: left;
+}
+// Center Position
+%centerPositionAll{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+%displayInline{
+	display: inline-block;
+}

@@ -1,0 +1,85 @@
+.sistema{
+	@extend %boxFull;
+	background: $cor-quaternaria;
+	margin: 30px 0;
+	@include respond-to(sm){
+		margin: 74px 0;
+	}
+	@include respond-to(sm){
+		padding: 60px 0;
+		margin: 0;
+	}
+	@include e('left'){
+		@include span(1);
+		@include respond-to(sm){
+			@include span(1);
+		}
+		@include respond-to(md){
+			@include span(.7);
+		}
+	}
+	@include e('figure'){
+		margin: 0;
+		margin-bottom: 30px;
+		@include respond-to(sm){
+			margin: 0;
+		}
+		img{
+			max-width: 100%;
+		}
+	}
+	@include e('right'){
+		@include span(1);
+		@include respond-to(sm){
+			@include span(1);
+			display: flex;
+    		align-items: center;
+    		justify-content: center;
+			
+		}
+		@include respond-to(md){
+			@include span(.3);
+		}
+	}
+	@include e('legend'){
+		@include span(1);
+		//background: #ccc;
+		    //margin: 85px 0;
+		    @include respond-to(sm){
+		    	    max-width: 490px;
+		    }
+		p{
+			color: #2e4b75;
+			@include fonts(400,16);
+			text-align: justify;
+		}
+	}
+}
+
+.bloco-title{
+	background: #2e4b75;
+
+	width: 100%;
+    height: auto;
+   
+    text-align: center;
+   
+    margin-bottom: 30px;
+  	padding: 10px;
+    @include respond-to(sm){
+    	
+    	padding: 10px 45px;
+    }
+    @include respond-to(md){
+    	
+    	padding: 10px 17px;
+    }
+    h3{
+    	color: #fff;
+	    
+	    display: block;
+	    margin: 0 auto;
+	    @include fonts(400,22);
+
+    }
+}
